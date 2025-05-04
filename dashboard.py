@@ -4,17 +4,26 @@ import plotly.express as px
 from datetime import datetime
 import base64
 
-st.set_page_config(page_title="Multi-File Sensor Dashboard", layout="wide")
-st.title("Portable Solar Radio Telescope Dashboard")
-# Background image function
 def get_base64_of_bin_file(bin_file_path):
     with open(bin_file_path, 'rb') as f:
         data = f.read()
     return base64.b64encode(data).decode()
 
-# Apply background image
-bg_image = get_base64_of_bin_file(r"C:\Users\lavan\Downloads\New folder\Radio Astronomy\Pictortelescope.jpg")
-  # <- Change this if needed
+# Change path to your image location relative to dashboard.py
+bg_image = get_base64_of_bin_file("Pictortelescope.jpg")  # or "assets/Pictortelescope.jpg" if in assets folder
+
+background_style = f"""
+<style>
+    .stApp {{
+        background-image: url("data:image/jpg;base64,{bg_image}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }}
+</style>
+"""
+
+st.markdown(background_style, unsafe_allow_html=True)
 page_bg_css = f"""
 <style>
 .stApp {{
