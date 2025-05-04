@@ -22,7 +22,6 @@ background_style = f"""
     }}
 </style>
 """
-
 st.markdown(background_style, unsafe_allow_html=True)
 
 # UPDATED CSS with .stAlert included
@@ -50,6 +49,13 @@ div.stAlert {{
 </style>
 """
 st.markdown(page_bg_css, unsafe_allow_html=True)
+
+# 🌞 Add the Dashboard Title
+st.markdown("""
+    <h1 style='text-align: center; color: white; font-size: 3em;'>
+        Portable Solar Radio Telescope Track Dashboard
+    </h1>
+""", unsafe_allow_html=True)
 
 # Session state to persist uploads
 if "file_data" not in st.session_state:
