@@ -32,12 +32,14 @@ page_bg_css = f"""
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-family: 'Poppins', sans-serif;
-  color: #1f4e79;
+  color: #FFFFFF;
+
 }}
 
 html, body, [class*="css"] {{
   font-family: 'Poppins', sans-serif;
-  color: #1f4e79;
+  color: #FFFFFF;
+
 }}
 
 }}
