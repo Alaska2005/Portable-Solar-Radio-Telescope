@@ -24,6 +24,8 @@ background_style = f"""
 """
 
 st.markdown(background_style, unsafe_allow_html=True)
+
+# UPDATED CSS with .stAlert included
 page_bg_css = f"""
 <style>
 .stApp {{
@@ -33,15 +35,17 @@ page_bg_css = f"""
   background-attachment: fixed;
   font-family: 'Poppins', sans-serif;
   color: #FFFFFF;
-
 }}
 
 html, body, [class*="css"] {{
   font-family: 'Poppins', sans-serif;
   color: #FFFFFF;
-
 }}
 
+/* Force text color inside Streamlit info boxes */
+div.stAlert {{
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.5);
 }}
 </style>
 """
@@ -50,7 +54,6 @@ st.markdown(page_bg_css, unsafe_allow_html=True)
 # Session state to persist uploads
 if "file_data" not in st.session_state:
     st.session_state.file_data = []
-    
 
 # Upload section
 st.sidebar.header("📂 Upload CSV")
@@ -108,5 +111,3 @@ if st.session_state.file_data:
 
 else:
     st.info("No files uploaded yet. Use the sidebar to upload CSV files.")
-
-
