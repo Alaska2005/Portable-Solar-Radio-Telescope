@@ -1,9 +1,14 @@
 # solar_analysis.py
-import pandas as pd
+
 import numpy as np
+import pandas as pd
 
 def analyze_solar_data(df):
-    df["Change"] = df["Reading"].diff()
+    # Ensure the column exists
+    if "Sensor Output" not in df.columns:
+        raise KeyError("Expected column 'Sensor Output' not found in DataFrame.")
+    
+    df["Change"] = df["Sensor Output"].diff()
 
     def analyze(row, idx, data):
         if idx >= 2 and all(np.isclose(data[idx-2:idx+1], data[idx], atol=0.01)):
@@ -17,5 +22,5 @@ def analyze_solar_data(df):
         else:
             return "Stable"
 
-    df["Status"] = [analyze(row, idx, df["Reading"].values) for idx, row in df.iterrows()]
+    df["Status"] = [analyze(row, idx, df["Sensor Output"].values) for idx, row in df.iterrows()]
     return df
