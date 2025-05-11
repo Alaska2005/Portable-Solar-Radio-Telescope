@@ -1,13 +1,8 @@
 # solar_analysis.py
-
 import numpy as np
 import pandas as pd
 
 def analyze_solar_data(df):
-    # Ensure the column exists
-    if "Sensor Output" not in df.columns:
-        raise KeyError("Expected column 'Sensor Output' not found in DataFrame.")
-    
     df["Change"] = df["Sensor Output"].diff()
 
     def analyze(row, idx, data):
