@@ -68,7 +68,9 @@ if uploaded_files:
         if file.name not in [f["Filename"] for f in st.session_state.file_data]:
             timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             df = pd.read_csv(file, header=None)
-            df.columns = ["Time (s)", "Sensor Output"]
+            df.columns = ["Time (s)", "Sensor Output"] 
+            df["Sensor Output"] = pd.to_numeric(df["Sensor Output"], errors='coerce')
+
 
             try:
                 analyzed_df = analyze_solar_data(df)
