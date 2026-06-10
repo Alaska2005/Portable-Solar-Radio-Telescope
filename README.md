@@ -1,14 +1,13 @@
-# 🔭 Portable Solar Radio Telescope Dashboard
+#  Portable Solar Radio Telescope Dashboard
 
 A **Streamlit-based dashboard** for visualizing, analyzing, and monitoring solar radio telescope sensor data. Upload your CSV observation files, detect solar events automatically, and explore signal intensity trends — all in one place.
 
 Built for educational, research, and amateur radio astronomy applications.
 
----
 
-## ✨ Features
+##  Features
 
-### 📂 Data Management
+###  Data Management
 - Upload multiple CSV files simultaneously
 - Persistent file management using Streamlit Session State
 - View uploaded file records with timestamps
@@ -21,7 +20,7 @@ Built for educational, research, and amateur radio astronomy applications.
 - Automatic minimum and maximum intensity detection
 - Multi-file comparison support
 
-### ☀️ Solar Activity Analysis
+### Solar Activity Analysis
 
 The dashboard automatically classifies each observation into one of the following categories:
 
@@ -35,7 +34,7 @@ The dashboard automatically classifies each observation into one of the followin
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 portable-solar-radio-telescope/
@@ -50,7 +49,7 @@ portable-solar-radio-telescope/
 
 ---
 
-## 📄 CSV File Format
+## CSV File Format
 
 The dashboard expects **headerless CSV files** with two columns:
 
@@ -72,7 +71,7 @@ The dashboard expects **headerless CSV files** with two columns:
 
 ---
 
-## 🧠 Solar Analysis Logic
+## Solar Analysis Logic
 
 Signal change is calculated as:
 
@@ -101,7 +100,7 @@ No significant variation detected
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Repository
 
@@ -152,7 +151,7 @@ The app will open automatically in your browser.
 
 ---
 
-## 📦 Dependencies
+##  Dependencies
 
 ```
 streamlit
@@ -163,7 +162,7 @@ plotly
 
 ---
 
-## 🔮 Planned Features
+##  Planned Features
 
 - Solar transit prediction
 - Automatic peak detection
